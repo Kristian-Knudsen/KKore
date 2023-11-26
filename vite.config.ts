@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [vue(), libInjectCss(), dts({ rollupTypes: true })],
   resolve: {
     alias: [
-      { find: '@scss', replacement: fileURLToPath(new URL('./src/scss', import.meta.url ))},
+      { find: '@scss', replacement: fileURLToPath(new URL('./src/scss', import.meta.url))},
     ]
   },
   build: {
@@ -31,30 +31,3 @@ export default defineConfig({
     }
   }
 })
-
-// https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [
-//     vue(),
-//     dts({ include: ["src/"], outDir: "dist/" }),
-//   ],
-//   resolve: {
-//     alias: [
-//       { find: '@scss', replacement: fileURLToPath(new URL('./src/scss', import.meta.url ))},
-//     ]
-//   },
-//   build: {
-//     lib: {
-//       entry: resolve(__dirname, 'src/index.ts'),
-//       formats: ['es']
-//     },
-//     rollupOptions: {
-//       external: ['vue', 'sweetalert2', 'sass'],
-//       input: resolve(__dirname, 'src/index.ts'),
-//       output: {
-//         assetFileNames: 'assets/[name][extname]',
-//         entryFileNames: '[name].js'
-//       }
-//     },
-//   }
-// })
