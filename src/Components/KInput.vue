@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<{
     right: false,
     left: false,
 });
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue']);
 </script>
 
 <style scoped lang="scss">

@@ -6,11 +6,20 @@
     <KButton block>Block button</KButton>
     <KButton>Button <template v-slot:right>Right</template></KButton>
     <KButton disabled>Disabled</KButton>
+    <KButton outlined>Outlined</KButton>
+    
+    <h2>Stated button</h2>
+    <KButtonStated :state="statedButtonRef" @clicked="e => statedButtonRef = e">Stated</KButtonStated>
+    <p style="margin: 0">Value: {{ statedButtonRef }}</p>
+
+    <h1>Switch</h1>
     <KSwitch v-model="switchRef" />
     <p style="margin: 0">Value: {{ switchRef }}</p>
 
     <h1>Grouped buttons</h1>
-    <KButtonGroup :values="['Test1', 'Test2', 'Test3']" :model-value="buttonGroupRef"/>
+    <KButtonGroup :values="['Test1']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
+    <KButtonGroup :values="['Test1', 'Test2']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
+    <KButtonGroup :values="['Test1', 'Test2', 'Test3']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
     <p>Active button: {{ buttonGroupRef }}</p>
 
     <h1>Alerts</h1>
@@ -48,6 +57,7 @@ import KDropdown from './src/Components/KDropdown.vue';
 import KSlideIn from './src/Services/KSlideIn.vue';
 import KButtonGroup from './src/Components/KButtonGroup.vue';
 import { SweetAlertIcon } from 'sweetalert2';
+import KButtonStated from './src/Components/KButtonStated.vue';
 
 const makeOutput = () => console.log('Test Output');
 const makeAlert = (type: SweetAlertIcon) => KAlert(type, 'TestHeader', 'TestText')
@@ -55,6 +65,7 @@ const switchRef = ref(false);
 const dropdownRef = ref('');
 const buttonGroupRef = ref('');
 const slideInRef = ref(false);
+const statedButtonRef = ref(false);
 
 </script>
 
