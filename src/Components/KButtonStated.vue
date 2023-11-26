@@ -84,8 +84,7 @@ const slots = useSlots();
     }
 
     &--small {
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding: .15rem .5rem;
     }
 }
 </style>

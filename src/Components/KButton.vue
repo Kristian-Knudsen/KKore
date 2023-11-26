@@ -3,7 +3,8 @@
         class="button" 
         :class="{
             'button__block': props.block,
-            'button--small': props.size === 'sm' || props.size === 'SM',
+            'button--small': props.size?.toLowerCase() === 'sm',
+            'button--slim': props.size?.toLowerCase() === 'slim',
             'button__split': slots.right,
             'button__disabled': props.disabled,
             'button__outlined': props.outlined,
@@ -90,10 +91,8 @@ const slots = useSlots();
         }
     }
 
-
     &--small {
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding: .15rem .5rem;
     }
 }
 </style>
