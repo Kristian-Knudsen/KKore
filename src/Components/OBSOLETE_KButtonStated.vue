@@ -5,7 +5,6 @@
             'KButtonStated__block': props.block,
             'KButtonStated--small': props.size === 'sm' || props.size === 'SM',
             'KButtonStated__split': slots.right,
-            'KButtonStated__disabled': props.disabled,
             'KButtonStated--active': props.state
         }"
         @click="emit('clicked', !props.state)"
@@ -27,8 +26,6 @@ const props = defineProps<{
     size?: string
     // @prop: block - Is the block 100% width
     block?: boolean
-    // @prop: disabled - Is the button clickable
-    disabled?: boolean,
 }>();
 // @emit: clicked - When the button is clicked
 const emit = defineEmits(['clicked']);
@@ -75,12 +72,6 @@ const slots = useSlots();
         padding-right: .5rem;
         padding-left: .5rem;
         gap: 2rem;
-    }
-
-    &__disabled {
-        pointer-events: none;
-        background-color: $disabled;
-        border-color: $disabled;
     }
 
     &--small {

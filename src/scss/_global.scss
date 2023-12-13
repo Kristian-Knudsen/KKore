@@ -1,2 +1,10 @@
-$primary: #36c3f1;
-$disabled: #d3d3d3;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$primary: #21923b;
+$secondary: #3b2192;
+$tertiary: #923b21;
+
+* {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+
+}

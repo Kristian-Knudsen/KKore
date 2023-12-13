@@ -1,19 +1,25 @@
 <template>
 <div class="appWrapper">
     <h1>Buttons</h1>
-    <KButton @clicked="makeOutput">Button</KButton>
+    <KButton @clicked="makeOutput">Normal Button</KButton>
     <KButton size="sm">Small button</KButton>
+    <KButton size="lg">Large button</KButton>
     <KButton block>Block button</KButton>
     <KButton>Button <template v-slot:right>Right</template></KButton>
-    <KButton disabled>Disabled</KButton>
+    <KButton>Primary</KButton>
+    <KButton color="secondary">Secondary</KButton>
+    <KButton color="tertiary">Tertiary</KButton>
     <KButton outlined>Outlined</KButton>
+    <KButton outlined color="secondary">Outlined Secondary</KButton>
+    <KButton outlined color="tertiary">Outlined Tertiary</KButton>
     
-    <h2>Stated button</h2>
-    <KButtonStated :state="statedButtonRef" @clicked="e => statedButtonRef = e">Stated</KButtonStated>
+    <p>Stated button</p>
+    <KButton v-model="statedButtonRef">Stated button</KButton>
     <p style="margin: 0">Value: {{ statedButtonRef }}</p>
 
     <h1>Switch</h1>
-    <KSwitch v-model="switchRef" />
+    <KSwitch color="primary" variant="round" v-model="switchRef" />
+    <KSwitch color="secondary" variant="square" v-model="switchRef" />
     <p style="margin: 0">Value: {{ switchRef }}</p>
 
     <h1>Grouped buttons</h1>
@@ -57,7 +63,6 @@ import KDropdown from './src/Components/KDropdown.vue';
 import KSlideIn from './src/Services/KSlideIn.vue';
 import KButtonGroup from './src/Components/KButtonGroup.vue';
 import { SweetAlertIcon } from 'sweetalert2';
-import KButtonStated from './src/Components/KButtonStated.vue';
 
 const makeOutput = () => console.log('Test Output');
 const makeAlert = (type: SweetAlertIcon) => KAlert(type, 'TestHeader', 'TestText')

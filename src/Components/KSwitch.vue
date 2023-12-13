@@ -1,18 +1,37 @@
 <template>
     <label class="switch">
-        <input type="checkbox" :value="props.modelValue" @change="$emit('update:modelValue', !props.modelValue)">
-        <span class="slider round"></span>
+        <input
+            type="checkbox"
+            :value="props.modelValue" 
+            @change="$emit('update:modelValue', !props.modelValue)"
+            >
+        <span 
+            class="slider" 
+            :class="{
+                'slider--round': props.variant?.toLowerCase() === 'round',
+                'slider--square': props.variant?.toLowerCase() === 'square',
+                'slider--primary': props.color?.toLowerCase() === 'primary',
+                'slider--secondary': props.color?.toLowerCase() === 'secondary',
+                'slider--tertiary': props.color?.toLowerCase() === 'tertiary',
+            }"
+        ></span>
     </label>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     modelValue: boolean,
-}>();
+    color?: string,
+    variant: string,
+}>(), {
+    color: "primary",
+    variant: "round",
+});
 defineEmits(['update:modelValue']);
 </script>
 
 <style scoped lang="scss">
+@import "@scss/_global.scss";
 .switch {
   position: relative;
   display: inline-block;
@@ -48,18 +67,35 @@ defineEmits(['update:modelValue']);
         transition: .4s;
     }
 
-    &.round {
+    &--round {
         border-radius: 34px;
 
         &::before {
             border-radius: 50%;
         }
     }
+
+    &--square {
+        border-radius: 5px;
+
+        &::before {
+            border-radius: 5px;
+        }
+    }
 }
 
 input {
     &:checked + .slider {
-        background-color: #2196F3;
+        &.slider--primary {
+            background-color: $primary;
+        }
+        &.slider--secondary {
+            background-color: $secondary;
+        }
+        &.slider--tertiary {
+            background-color: $tertiary;
+        }
+
 
         &::before {
             -webkit-transform: translateX(26px);

@@ -1,11 +1,6 @@
-[[toc]]
-
 # Components overview of Knudsen Design
+[KButton](/components/KButton)
 
-## KButton
-**Usage**
-```vue{4}
-<template>
-    <h1>Snut</h1>
-</template>
-```
+[KButtonGroup](/components/KButtonGroup)
+
+[KSwitch](/components/KSwitch)

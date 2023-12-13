@@ -3,7 +3,6 @@ import KDropdown from './Components/KDropdown.vue';
 import KInput from './Components/KInput.vue';
 import KSwitch from './Components/KSwitch.vue';
 import KButtonGroup from './Components/KButtonGroup.vue';
-import KButtonStated from './Components/KButtonStated.vue';
 
 export {
     KButton,
@@ -11,5 +10,4 @@ export {
     KInput,
     KSwitch,
     KButtonGroup,
-    KButtonStated,
 }
