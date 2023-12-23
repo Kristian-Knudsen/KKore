@@ -8,7 +8,7 @@
             :type="props.type"
             :placeholder="props.placeholder"
             :value="props.modelValue"
-            @change="emit('update:modelValue')"
+            @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         />
         <template v-if="props.right && !props.left">
             <span class="wrapper__right"><slot></slot></span>
@@ -18,14 +18,14 @@
 
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-    modelValue?: string
+    modelValue: string,
     type?: string
     placeholder?: string
     right?: boolean
     left?: boolean
 }>(), {
     type: 'text',
-    placeholder: 'Placeholder',
+    placeholder: 'placeholder',
     right: false,
     left: false,
 });
@@ -63,6 +63,7 @@ const emit = defineEmits(['update:modelValue']);
     border: 0;
     padding: .5rem;
     border-radius: .25rem;
+    width: 100%;
 
     &:focus-visible {
         outline: none;

@@ -1,5 +1,9 @@
 <template>
-    <select class="dropdown" v-model="innerValue">
+    <select 
+        class="KDropdown" 
+        :value="props.modelValue" 
+        @change="e => emit('update:modelValue', (e.target as HTMLSelectElement).value)"
+    >
         <option v-for="option in props.options" :key="option" :value="option">
             {{ option }}
         </option>
@@ -7,29 +11,24 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted} from 'vue';
+
 const props = defineProps<{
     options: string[]
     modelValue?: string,
 }>();
-const emit = defineEmits(['changed']);
-
-const innerValue = ref(props.options[0]);
-
-watch(innerValue, (newValue) => {
-    emit('changed', newValue.toLowerCase());
-});
+const emit = defineEmits(['update:modelValue']);
 
 onMounted(() => {
-    emit('changed', props.options[0].toLowerCase())
-});
+    emit('update:modelValue', props.options[0])
+})
 
 </script>
 
 <style scoped lang="scss">
-.dropdown {
+.KDropdown {
     padding: .5rem;
     border-radius: .25rem;
-    width: fit-content;
+    width: 100%;
 }
 </style>

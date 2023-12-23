@@ -1,32 +1,18 @@
 <template>
 <div class="appWrapper">
-    <h1>Buttons</h1>
-    <KButton @clicked="makeOutput">Normal Button</KButton>
-    <KButton size="sm">Small button</KButton>
-    <KButton size="lg">Large button</KButton>
-    <KButton block>Block button</KButton>
-    <KButton>Button <template v-slot:right>Right</template></KButton>
-    <KButton>Primary</KButton>
-    <KButton color="secondary">Secondary</KButton>
-    <KButton color="tertiary">Tertiary</KButton>
-    <KButton outlined>Outlined</KButton>
-    <KButton outlined color="secondary">Outlined Secondary</KButton>
-    <KButton outlined color="tertiary">Outlined Tertiary</KButton>
-    
-    <p>Stated button</p>
-    <KButton v-model="statedButtonRef">Stated button</KButton>
-    <p style="margin: 0">Value: {{ statedButtonRef }}</p>
 
-    <h1>Switch</h1>
-    <KSwitch color="primary" variant="round" v-model="switchRef" />
-    <KSwitch color="secondary" variant="square" v-model="switchRef" />
-    <p style="margin: 0">Value: {{ switchRef }}</p>
+    <KChip>Primary</KChip>
+    <KChip color="secondary">Primary</KChip>
+    <KChip color="tertiary">Primary</KChip>
+    <KChip outlined color="primary">Primary</KChip>
+    <KChip outlined color="secondary">Primary</KChip>
+    <KChip outlined color="tertiary">Primary</KChip>
 
-    <h1>Grouped buttons</h1>
-    <KButtonGroup :values="['Test1']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
-    <KButtonGroup :values="['Test1', 'Test2']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
-    <KButtonGroup :values="['Test1', 'Test2', 'Test3']" :value="buttonGroupRef" @clicked="(e: string) => buttonGroupRef = e"/>
-    <p>Active button: {{ buttonGroupRef }}</p>
+    <KChip size="slim">Slim</KChip>
+    <KChip size="sm">Small</KChip>
+    <KChip>Normal</KChip>
+    <KChip size="lg">Large</KChip>
+
 
     <h1>Alerts</h1>
     <KButton size="sm" @clicked="makeAlert('success')">Success alert</KButton>
@@ -34,17 +20,6 @@
     <KButton size="sm" @clicked="makeAlert('warning')">Warning alert</KButton>
     <KButton size="sm" @clicked="makeAlert('info')">Info alert</KButton>
     <KButton size="sm" @clicked="makeAlert('question')">Question alert</KButton>
-
-    <h1>Inputs</h1>
-    <KInput placeholder="No content"/>
-    <KInput right placeholder="Right Icon"><Icon /></KInput>
-    <KInput left placeholder="Left Icon"><Icon /></KInput>
-    <KInput type="number" placeholder="number" />
-    <KInput type="number" right placeholder="Number with icon"><Icon /></KInput>
-
-    <h1>Dropdowns</h1>
-    <KDropdown :options="['Option1', 'Option2', 'Longer option']" :model-value="dropdownRef" @changed="e => dropdownRef = e"/>
-    <p style="margin: 0">Value: {{ dropdownRef }}</p>
 
     <h1>Animations</h1>
     <KButton @clicked="slideInRef = !slideInRef">Slide in from right</KButton>
@@ -56,25 +31,19 @@
 import { ref } from 'vue';
 import KButton from './src/Components/KButton.vue'
 import { KAlert } from './src/Services/KAlert';
-import KSwitch from './src/Components/KSwitch.vue'
-import KInput from './src/Components/KInput.vue';
-import Icon from './src/Components/TEST_Icon.vue';
-import KDropdown from './src/Components/KDropdown.vue';
 import KSlideIn from './src/Services/KSlideIn.vue';
-import KButtonGroup from './src/Components/KButtonGroup.vue';
 import { SweetAlertIcon } from 'sweetalert2';
+import KChip from './src/Components/KChip.vue';
 
-const makeOutput = () => console.log('Test Output');
 const makeAlert = (type: SweetAlertIcon) => KAlert(type, 'TestHeader', 'TestText')
-const switchRef = ref(false);
-const dropdownRef = ref('');
-const buttonGroupRef = ref('');
 const slideInRef = ref(false);
-const statedButtonRef = ref(false);
 
 </script>
 
 <style lang="scss">
+html {
+    background-color: rgb(25, 25, 25);
+}
 .appWrapper {
     display: flex;
     flex-direction: column;

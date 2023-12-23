@@ -12,7 +12,6 @@
 const props = defineProps<{
   condition: boolean,
 }>();
-
 // TODO: Make background nonscrollable when element is visible
 </script>
 

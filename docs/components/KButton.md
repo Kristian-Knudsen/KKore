@@ -96,8 +96,8 @@ This also works with different colors, sizes, etc!
 The component exposes the following emit:
 | Name        |      Effect     | 
 | :-----------: | :-----------: |
-| clicked      | Happens when the component is clicked and is non stated |
-| update:modelValue | Happens when the component is clicked and is stated |
+| clicked      | Happens when the button is clicked and is non stated |
+| update:modelValue | Happens when the button is clicked and is stated |
 
 ## Props
 | Prop | Effect | Values | Default | Required | Type |

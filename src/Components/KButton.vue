@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSlots, withDefaults } from 'vue';
+import { useSlots } from 'vue';
 
 const props = withDefaults(defineProps<{
     size?: string

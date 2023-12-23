@@ -4,3 +4,9 @@
 [KButtonGroup](/components/KButtonGroup)
 
 [KSwitch](/components/KSwitch)
+
+[KInput](/components/KInput)
+
+[KDropdown](/components/KDropdown)
+
+[KChip](/components/KChip)
