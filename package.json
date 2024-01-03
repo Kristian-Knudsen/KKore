@@ -1,6 +1,6 @@
 {
   "name": "kkore",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "./dist/kkore.umd.js",
   "module": "./dist/kkore.mjs",
   "types": "./dist/index.d.ts",
