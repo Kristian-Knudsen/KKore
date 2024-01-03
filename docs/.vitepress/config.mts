@@ -10,6 +10,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Components', link: '/components' },
+      { text: 'Services', link: '/components#services'}
       // { text: 'Documenting components', link: '/documenting_components' },
     ],
 
@@ -24,9 +25,16 @@ export default defineConfig({
             { text: 'KInput', link: '/components/KInput' },
             { text: 'KDropdown', link: '/components/KDropdown' },
             { text: 'KChip', link: '/components/KChip' },
+            { text: 'KCard', link: '/components/KCard' },
             // { text: 'Markdown Examples', link: '/markdown-examples' },
             // { text: 'Runtime API Examples', link: '/api-examples' },
           ],
+        },
+        {
+          text: 'Services',
+          items: [
+            { text: 'KSlideIn', link: '/components/KSlideIn' },
+          ]
         }
       ],
 

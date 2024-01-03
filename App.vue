@@ -13,6 +13,20 @@
     <KChip>Normal</KChip>
     <KChip size="lg">Large</KChip>
 
+    <KButtonGroup
+        :values="['Value1', 'Value2', 'Value3']" 
+        :value='buttonGroupRef'
+        @clicked="e => buttonGroupRef = e"
+    />
+
+    <KCard style="padding: 2rem;">
+        <p>Not gray</p>
+    </KCard>
+
+    <KCard gray style="padding: 2rem;">
+        <p>Not gray</p>
+    </KCard>
+
 
     <h1>Alerts</h1>
     <KButton size="sm" @clicked="makeAlert('success')">Success alert</KButton>
@@ -23,7 +37,7 @@
 
     <h1>Animations</h1>
     <KButton @clicked="slideInRef = !slideInRef">Slide in from right</KButton>
-    <KSlideIn :condition="slideInRef"><div><p>Content slided in from right</p></div></KSlideIn>
+    <KSlideIn :condition="slideInRef" @shouldClose="slideInRef = !slideInRef" title="Hej"><div><p>Content slided in from right</p></div></KSlideIn>
 </div>
 </template>
 
@@ -34,9 +48,12 @@ import { KAlert } from './src/Services/KAlert';
 import KSlideIn from './src/Services/KSlideIn.vue';
 import { SweetAlertIcon } from 'sweetalert2';
 import KChip from './src/Components/KChip.vue';
+import KButtonGroup from './src/Components/KButtonGroup.vue';
+import KCard from './src/Components/KCard.vue';
 
 const makeAlert = (type: SweetAlertIcon) => KAlert(type, 'TestHeader', 'TestText')
 const slideInRef = ref(false);
+const buttonGroupRef = ref(false);
 
 </script>
 

@@ -5,11 +5,14 @@ layout: home
 hero:
   name: "KKore"
   text: "Documentation for the KKore project"
-  tagline: My great project tagline
+  tagline: UI/Component library by Kristian Knudsen
   actions:
     - theme: brand
       text: Components
       link: /components
+    - theme: alt
+      text: Services
+      link: /components#services
     # - theme: alt
     #   text: API Examples
     #   link: /api-examples

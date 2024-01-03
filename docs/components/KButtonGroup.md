@@ -2,7 +2,7 @@
     import { KButtonGroup } from '../../dist/kkore.mjs';
     import { ref } from 'vue';
 
-    const buttonGroupRef = ref();
+    const state = ref();
 </script>
 # KButtonGroup
 
@@ -12,20 +12,20 @@
 <template>
     <KButtonGroup
         :values="['Value1', 'Value2', 'Value3']" 
-        :value="buttonGroupRef" 
-        @clicked="e => buttonGroupRef = e"
+        :value="state" 
+        @clicked="e => state = e"
     />
 </template>
 <script>
 import { ref } from 'vue';
-const buttonGroupRef = ref();
+const state = ref();
 </script>
 ```
 Generates:
 <KButtonGroup
     :values="['Value1', 'Value2', 'Value3']" 
-    :value='buttonGroupRef' 
-    @clicked="e => buttonGroupRef = e"
+    :value='state' 
+    @clicked="e => state = e"
 />
 
 ## Props

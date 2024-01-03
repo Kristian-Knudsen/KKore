@@ -4,7 +4,9 @@ import KInput from './Components/KInput.vue';
 import KSwitch from './Components/KSwitch.vue';
 import KButtonGroup from './Components/KButtonGroup.vue';
 import KChip from './Components/KChip.vue';
+import KCard from './Components/KCard.vue';
 // import { KAlert } from './Services/KAlert';
+import KSlideIn from './Services/KSlideIn.vue';
 
 export {
     KButton,
@@ -12,6 +14,8 @@ export {
     KInput,
     KSwitch,
     KButtonGroup,
-    // KAlert,
     KChip,
+    KCard,
+    // KAlert,
+    KSlideIn
 }
