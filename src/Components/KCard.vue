@@ -25,10 +25,7 @@ const emit = defineEmits(['clicked']);
 @import "@scss/_global.scss";
 
 .KCard {
-    width: fit-content;
-    height: fit-content;
     padding: 1rem;
-
     border-radius: 1rem;
     background-color: $white;
     color: $black;
